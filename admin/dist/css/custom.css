@@ -1,0 +1,150 @@
+/*general style*/
+a.doneMessage{
+    text-decoration: none;
+}
+p.done, a.done{
+    color: #60d560;;
+}
+p.error, a.error{
+    color: #ff0000;
+}
+/*header.php*/
+span.profile-photo > img{
+    border-radius: 12px;
+}
+.admin-img a.navbar-brand{
+    padding: 5px 5px 5px 20px !important;
+}
+/*customize.php form*/
+.title-panel{
+    padding-top: 41px;
+    padding-bottom: 35px;
+}
+.form-inline.title-form input[type="text"] {
+    width: 315px;
+}
+/*menu.php form*/
+.menu-form{
+    padding: 10px 0;
+}
+.menu-list > li > a {
+    display: inline;
+    padding: 0;
+}
+.menu-list > li{
+    padding: 10px 10px;
+    border-bottom: 1px solid #ddd;
+}
+.menu-list li .btn-info {
+    width: 100%;
+}
+/*add new post*/
+.btn.btn-success.col-md-12.publish {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+/*inbox.php*/
+
+.mail-caption{
+    position: relative;
+    overflow: hidden;
+}
+.mail-message {
+    position: absolute;
+    top: 0px;
+    transition: background 0.8 ease-in-out 1.8s;
+}
+.mail-icon-overlay{
+    position:absolute;
+    background:rgba(0,0,0,.6);
+    width:100%;
+    height:100%;
+    top:-100%;
+    transition:.5s;
+    margin-left: -8px;
+}
+.mail-icon-overlay > span{
+    float: right;
+    margin: 2px;
+    padding: 5px;
+    background: #9d9d9d;
+    border: 1px solid #9d9d9d;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    border-radius: 50%;
+}
+.mail-icon-overlay > span > a{
+    color: #2b1856;
+    font-size: 15px;
+}
+.mail-caption:hover .mail-icon-overlay{
+    top:0;
+    background:rgba(255,0,0,.2);
+}
+/*apppost.php*/
+.seo-meta-panel{
+    padding: 0;
+}
+/*theme.php*/
+.typography > select {
+    display: inline-block;
+    width: 65%;
+    float: right;
+    position: relative;
+}
+.form-group.col-md-4.typography {
+    padding: 0;
+}
+/*newsletter.php*/
+.panel-newsletter #example_filter input[type="search"], .panel-newsletter #confirmed_filter input[type="search"]  {
+    width: 75%;
+}
+/*widget.php*/
+.box-panel > h2:nth-child(1) {
+    display: block;
+    margin-top: 0;
+    padding: 5px 25px;
+    background: #dddd;
+    color: #7f6868;
+    font-size: 25px;
+    border: 1px solid #ababab;
+    border-radius: 5px;
+}
+.box-panel > .col-lg-6 {
+    padding: 0;
+}
+.single-modals > a.btn.btn-default {
+    width: 95%;
+    margin-bottom: 14px;
+}
+#WidgetArea .modal-footer{
+    text-align: left !important;
+}
+
+.single-modals .alert-warning {
+    color: #8a6d3b;
+    background-color: #fff;
+    border-color: #faebcc;
+}
+.single-modals .alert {
+    padding: 0;
+    margin-bottom: 0;
+    border: none;}
+/*viewmail.php*/
+.panel-body.viewmail{
+    outline: hidden;
+}
+.panel-body.viewmail span {
+    font-weight: 700;
+}
+.panel-body.viewmail span.float-right {
+    float: right !important;
+}
+
+/*login.php*/
+.col-md-6.forgot-pass {
+    margin-bottom: 10px;
+}
+span.registration{
+    float: right;
+}

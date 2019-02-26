@@ -1,0 +1,53 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+
+#Secure htaccess file <----Remember to put every space and consider no space-->
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+#By this no one can see my htaccess code ---> For security
+
+
+#Simple redirects for index page (very important- need to deactivate any time if conflict with page.php)
+RewriteRule ^index\.php http://buddyblogger.test/ [R=301,L]
+
+
+#------------------------------------------------------------------------------
+#this is to remove .php extension
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+
+#------------------------------------------------------------------------------
+
+
+#For showing without page.php
+RewriteRule ^page/([^/.]+)/?$ /pages.php?title=$1
+
+#For showing with post text
+#RewriteRule ^post([0-9]+)/([0-9a-zA-Z_-]+)$ post.php?post_id=$1&post_url=$2 [NC,L]
+#For showing without post.php
+#RewriteRule ^([^/.]+)/?$ /post.php?id=$1 [L]
+#RewriteRule ^posts/([^/.]+)/?$ /post.php?id=$1 [L]
+RewriteRule ^([^/.]+)/?$ /post.php?id=$1
+
+#For showing without search.php
+#RewriteRule ^searches/(.*)$ ./search.php?search=$1
+
+
+#For showing without category.php
+#RewriteRule ^categories/([^/.]+)?$ /category.php?category=$2 [L]
+#RewriteRule ^categories/(\d+)*$ ./category.php?category=$1
+RewriteRule ^category/([^/.]+)/?$ /categories.php?category=$1
+#RewriteRule ^([^/.]+)/?$ /category.php?category=$1
+
+
+#this is for xml sitemap
+RewriteRule ^sitemap\.xml/?$ sitemap.php
