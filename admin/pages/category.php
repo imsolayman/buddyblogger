@@ -36,7 +36,9 @@ if(isset($_GET['delete'])){
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Posts</th>
+                                    <?php if(Session::get('userRole') == '1'){ ?>
                                     <th>Action</th>
+                                    <?php } ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -64,7 +66,9 @@ if(isset($_GET['delete'])){
                                                 }
                                             ?>
                                         </td>
+                                            <?php if(Session::get('userRole') == '1'){ ?>
                                         <td  class="center"> <a href="editcategory.php?edit=<?php echo $result['id']; ?>"> <i class="fa fa-edit  fa-fw"></i></a>  <a onclick="return confirm('Are you sure?')" href="?delete=<?php echo $result['id']; ?>"><i class="fa fa-trash  fa-fw"></i></a>  </td>
+                                            <?php } ?>
                                     </tr>
                                 <?php
                                         }

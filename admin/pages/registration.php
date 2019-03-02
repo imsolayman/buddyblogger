@@ -68,13 +68,13 @@ $format = new Format();
                         $lastname = mysqli_real_escape_string($database->link, $_POST['lastname']);
                         $website = mysqli_real_escape_string($database->link, $_POST['website']);
 
-                        if($username == "" || $email == "" || $password == ""){
+                        if($username == "" || $email == "" ||  $firstname == "" ||  $lastname == "" || $password == ""){
                             echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Field must not be empty !</div>";
                         }else{
                             $query = "INSERT INTO list_user (firstname, lastname, username, email, password, website) VALUES ('$firstname', '$lastname', '$username', '$email', '$password', '$website')";
                             $inserted_row = $database->insert($query);
                             if($inserted_row){
-                                echo "<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Account Created Successfully ! <a href='login.php'>Login Here</a> </div>";
+                                echo "<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Account Created Successfully ! You can Login After Approval <a href='login.php'>Login Here</a> </div>";
                             }else{
                                 echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Something Went Wrong !</div>";
                             }
@@ -90,10 +90,10 @@ $format = new Format();
                                 <input class="form-control" placeholder="E-mail" name="email" type="email" required>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="First Name" name="firstname" type="text">
+                                <input class="form-control" placeholder="First Name" name="firstname" type="text" reguired>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Last Name" name="lastname" type="text">
+                                <input class="form-control" placeholder="Last Name" name="lastname" type="text" reguired>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="http://" name="website" type="text">

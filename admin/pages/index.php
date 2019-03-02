@@ -59,7 +59,7 @@
                                             }
                                         ?>
                                     </div>
-                                    <div>Guest Posts!</div>
+                                    <div>New Posts!</div>
                                 </div>
                             </div>
                         </div>

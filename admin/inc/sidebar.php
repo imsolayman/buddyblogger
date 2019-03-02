@@ -89,9 +89,6 @@
                     <li>
                         <a href="comments.php">Comments</a>
                     </li>
-                    <li>
-                        <a href="guest-post.php">Guest Posts</a>
-                    </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>

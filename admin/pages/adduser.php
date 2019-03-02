@@ -48,7 +48,7 @@
                             $file_ext = strtolower(end($div));
                             $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
                             $uploaded_image = "../upload/user/".$unique_image;
-                            if($username == "" || $email == "" || $password == ""){
+                            if($username == "" || $email == "" ||  $firstname == "" ||  $lastname == "" || $password == ""){
                                 echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Field must not be empty !</div>";
                             }elseif($file_size>1048567){
                                 echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Image Size should be less then 1MB !</div>";
@@ -80,13 +80,13 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">First Name</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">First Name*</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="firstname" class="form-control" id="inputEmail3" placeholder="First Name">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name*</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="lastname" class="form-control" id="inputEmail3" placeholder="Last Name">
                                 </div>

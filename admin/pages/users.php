@@ -14,6 +14,25 @@ if(isset($_GET['delete'])){
         echo "<script>alert('Something went wrong !');</script>";
     }
 }
+if(isset($_GET['confirm'])){
+    $id = $_GET['confirm'];
+    $query = "UPDATE list_user SET status = '1' WHERE id = '$id' ";
+    $updated_row = $database->update($query);
+    if($updated_row){
+        echo "<script>alert('Thanks for your confirmation');</script>";
+    }else{
+        echo "<script>alert('Something went wrong');</script>";
+    }
+}elseif(isset($_GET['unconfirm'])){
+    $id = $_GET['unconfirm'];
+    $query = "UPDATE list_user SET status = '0' WHERE id = '$id' ";
+    $updated_row = $database->update($query);
+    if($updated_row){
+        echo "<script>alert('Thanks for your confirmation');</script>";
+    }else{
+        echo "<script>alert('Something went wrong');</script>";
+    }
+}
 ?>
 
 <div id="page-wrapper">
@@ -42,6 +61,7 @@ if(isset($_GET['delete'])){
                             <th>Role</th>
                             <th>Posts</th>
                             <th>Action</th>
+                            <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -85,6 +105,22 @@ if(isset($_GET['delete'])){
                                             ?>
                                         </td>
                                         <td  class="center"><a href="editprofile.php?edit=<?php echo $result['id']; ?>"><i class="fa fa-edit  fa-fw"></i></a>  <a onclick="return confirm('Are you sure?')" href="?delete=<?php echo $result['id']; ?>"><i class="fa fa-trash  fa-fw"></i></a>  </td>
+                                        <td>
+                                            <a onclick="return confirm('Are you sure to approve?')" href="?confirm=<?php echo $result['id']; ?>" class="doneMessage">
+                                                <?php
+                                                if($result['status'] == 0){
+                                                    echo "<p class='error'>Pending</p>";
+                                                }
+                                                ?>
+                                            </a>
+                                            <a onclick="return confirm('Are you sure to unapprove?')" href="?unconfirm=<?php echo $result['id']; ?>" class="doneMessage">
+                                                <?php
+                                                if($result['status'] == 1){
+                                                    echo "<p class='done'>Approved</p>";
+                                                }
+                                                ?>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <?php
                                 }

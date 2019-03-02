@@ -125,13 +125,13 @@ if(!isset($_GET['edit']) || $_GET['edit'] == NULL){
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">First Name</label>
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">First Name*</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="firstname" class="form-control" id="inputEmail3" value="<?php echo $result['firstname']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name</label>
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name*</label>
                                         <div class="col-sm-10">
                                             <input type="text" name="lastname" class="form-control" id="inputEmail3" value="<?php echo $result['lastname']; ?>">
                                         </div>

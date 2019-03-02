@@ -65,7 +65,7 @@
                                 if($_POST['email'] == "" || $_POST['password'] == "" ){
                                     echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Field must not be empty !</div>";
                                 }else{
-                                    $query = "SELECT * FROM list_user WHERE email = '$email' AND password = '$password' ";
+                                    $query = "SELECT * FROM list_user WHERE email = '$email' AND password = '$password' AND status = '1' ";
                                     $result = $database->select($query);
                                     if($result != false){
                                         $value = $result->fetch_assoc();
@@ -75,7 +75,7 @@
                                         session::set("userRole", $value['role']);
                                         header("Location: index.php");
                                     }else{
-                                        echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Incorrect email and password !!</div>";
+                                        echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Incorrect email and password !! <a href=''>Conatct Us</a> if Anything Wrong </div>";
                                     }
                                 }
                             }

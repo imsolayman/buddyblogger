@@ -57,8 +57,10 @@
                             <th width="10%">Email</th>
                             <th width="30%">Comment</th>
                             <th width="10%">Time</th>
+                            <?php if(Session::get('userRole') == '1'){ ?>
                             <th width="8%">Status</th>
                             <th width="8%">Action</th>
+                            <?php } ?>
                         </tr>
                         </thead>
                         <tbody>
@@ -78,6 +80,7 @@
                                     <td><?php echo $result['email']; ?></td>
                                     <td><?php echo $format->textShorten($result['comment'], 100); ?></td>
                                     <td><?php echo $format->humanTiming(strtotime($result['created_at'])); ?></td>
+                                    <?php if(Session::get('userRole') == '1'){ ?>
                                     <td>
                                         <a onclick="return confirm('Are you sure to approve?')" href="?approved=<?php echo $result['id']; ?>" class="doneMessage">
                                         <?php
@@ -95,6 +98,7 @@
                                         </a>
                                     </td>
                                     <td  class="center"><a href="<?php echo SITE_URL; ?>post.php?id=<?php echo $result['post']; ?>" target="_blank"> <i class="fa fa-eye fa-fw"></i></a>  <a onclick="return confirm('Are you sure?')" href="?delete=<?php echo $result['id']; ?>"><i class="fa fa-trash  fa-fw"></i></a>  </td>
+                                    <?php } ?>
                                 </tr>
                          <?php
                                 }
