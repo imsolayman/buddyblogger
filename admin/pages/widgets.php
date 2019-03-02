@@ -40,6 +40,16 @@ if(Session::get('userRole') != '1'){
                                 Tags
                             </a>
                         </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=trendingposts"  class="btn btn-default">
+                                Trending Posts
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=adsbox"  class="btn btn-default">
+                                Ads Box
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="single-modals">
@@ -48,8 +58,8 @@ if(Session::get('userRole') != '1'){
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=footermenu"  class="btn btn-default">
-                                Footer Menu
+                            <a href="addwidget.php?name=headermenu"  class="btn btn-default">
+                                Header Menu
                             </a>
                         </div>
                         <div class="single-modals">
@@ -60,6 +70,16 @@ if(Session::get('userRole') != '1'){
                         <div class="single-modals">
                             <a href="addwidget.php?name=recentpost"  class="btn btn-default">
                                 Recent Posts
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=socialbox"  class="btn btn-default">
+                                Social Box
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=twitterfeed"  class="btn btn-default">
+                                Twitter Feed
                             </a>
                         </div>
                     </div>
@@ -158,13 +178,13 @@ if(Session::get('userRole') != '1'){
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar4">Sidebar 4</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar5">Sidebar 5</a>
                                     </h4>
                                 </div>
-                                <div id="Sidebar4" class="panel-collapse collapse">
+                                <div id="Sidebar5" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar4'] != ""){echo ucfirst($result['sidebar4'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                <?php if($result['sidebar5'] != ""){echo ucfirst($result['sidebar5'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                             </a></div>
 
                                     </div>
@@ -173,13 +193,28 @@ if(Session::get('userRole') != '1'){
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar4">Sidebar 4</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar6">Sidebar 6</a>
                                     </h4>
                                 </div>
-                                <div id="Sidebar4" class="panel-collapse collapse">
+                                <div id="Sidebar6" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar4'] != ""){echo ucfirst($result['sidebar4'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                <?php if($result['sidebar6'] != ""){echo ucfirst($result['sidebar6'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                            </a></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar7">Sidebar 7</a>
+                                    </h4>
+                                </div>
+                                <div id="Sidebar7" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <div class="single-modals"><a class="btn btn-default">
+                                                <?php if($result['sidebar7'] != ""){echo ucfirst($result['sidebar7'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                             </a></div>
 
                                     </div>
@@ -244,19 +279,19 @@ if(Session::get('userRole') != '1'){
                     </div>
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            Footer Widgets
+                            Header Widgets
                         </div>
                         <div class="panel-body">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Footer1">Footer 1</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#Header1">Header 1</a>
                                     </h4>
                                 </div>
-                                <div id="Footer1" class="panel-collapse collapse">
+                                <div id="Header1" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['footer1'] != ""){echo ucfirst($result['footer1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                <?php if($result['header1'] != ""){echo ucfirst($result['header1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                             </a></div>
 
                                     </div>
@@ -265,13 +300,13 @@ if(Session::get('userRole') != '1'){
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Footer2">Footer 2</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#Header2">Header 2</a>
                                     </h4>
                                 </div>
-                                <div id="Footer2" class="panel-collapse collapse">
+                                <div id="Header2" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['footer2'] != ""){echo ucfirst($result['footer2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                <?php if($result['header2'] != ""){echo ucfirst($result['header2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                             </a></div>
 
                                     </div>

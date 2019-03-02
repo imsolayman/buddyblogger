@@ -1,27 +1,23 @@
-<div class="widget latest-posts">
-    <header>
-        <h3 class="h6">Latest Posts</h3>
-    </header>
-    <div class="blog-posts">
+<div class="widget st--footer--widget">
+    <div class="st--widget--title--2">
+        <h4>Recent Post</h4>
+    </div>
+    <div class="st--recent--postbox--1">
         <?php
-        $query = "SELECT * FROM list_posts ORDER BY id DESC LIMIT 3";
+        $query = "SELECT * FROM list_posts ORDER BY id DESC LIMIT 2";
         $post = $database->select($query);
         if($post){
             while($result = $post->fetch_assoc()){
                 ?>
-                <!--            widget here-->
-                <a href="./posts/<?php echo $result['slug']; ?>">
-                    <div class="item d-flex align-items-center">
-                        <div class="image"><img src="admin/<?php echo $result['image']; ?>" alt="..." class="img-fluid" width="60px" height="60px"></div>
-                        <div class="title"><strong><?php echo $result['title']; ?></strong>
-                            <div class="d-flex align-items-center">
-                                <!--                            static elements-->
-                                <div class="views"><i class="icon-eye"></i> 500</div>
-                                <div class="comments"><i class="icon-comment"></i>12</div>
-                            </div>
-                        </div>
+                <div class="st--single">
+                    <div class="pull-left">
+                        <div class="st--recent--img" style="background-image: url(admin/<?php echo $result['image']; ?>)"></div>
                     </div>
-                </a>
+                    <div class="st--recent--content">
+                        <h5><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h5>
+                        <a href="#" class="st--date"><?php echo $format->formatDate($result['created_at']); ?></a>
+                    </div>
+                </div>
                 <?php
             }
         }

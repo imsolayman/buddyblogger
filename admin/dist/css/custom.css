@@ -130,6 +130,9 @@ span.profile-photo > img{
     padding: 0;
     margin-bottom: 0;
     border: none;}
+.single-modals > a.btn.btn-default.addwidget {
+    margin-bottom: 4px;
+}
 /*viewmail.php*/
 .panel-body.viewmail{
     outline: hidden;

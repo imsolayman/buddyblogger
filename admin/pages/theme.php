@@ -62,9 +62,6 @@
                                 <label class="checkbox-inline">
                                     <input type="checkbox" name="logo"  value="2" <?php if($result['logo'] == '2'){ echo "checked"; } ?>>Text Only <!--checked-->
                                 </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox"  name="logo" value="3" <?php if($result['logo'] == '3'){ echo "checked"; } ?>>Logo and Text
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -77,10 +74,13 @@
                             <div class="form-group">
                                 <label>Theme Color: </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="themecolor" id="optionsRadiosInline1" value="1" <?php if($result['themecolor'] == '1'){ echo "checked"; } ?>>Default
+                                    <input type="radio" name="themecolor" id="optionsRadiosInline2" value="0" <?php if($result['themecolor'] == '0'){ echo "checked"; } ?>>Default
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="themecolor" id="optionsRadiosInline2" value="2" <?php if($result['themecolor'] == '2'){ echo "checked"; } ?>>Blue
+                                    <input type="radio" name="themecolor" id="optionsRadiosInline1" value="1" <?php if($result['themecolor'] == '1'){ echo "checked"; } ?>>Blue
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="themecolor" id="optionsRadiosInline2" value="2" <?php if($result['themecolor'] == '2'){ echo "checked"; } ?>>Violet
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="themecolor" id="optionsRadiosInline2" value="3" <?php if($result['themecolor'] == '3'){ echo "checked"; } ?>>Green
@@ -89,13 +89,10 @@
                                     <input type="radio" name="themecolor" id="optionsRadiosInline2" value="4" <?php if($result['themecolor'] == '4'){ echo "checked"; } ?>>Pink
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="themecolor" id="optionsRadiosInline2" value="5" <?php if($result['themecolor'] == '5'){ echo "checked"; } ?>>Red
+                                    <input type="radio" name="themecolor" id="optionsRadiosInline2" value="5" <?php if($result['themecolor'] == '5'){ echo "checked"; } ?>>Yellow
                                 </label>
                                 <label class="radio-inline">
                                     <input type="radio" name="themecolor" id="optionsRadiosInline2" value="6" <?php if($result['themecolor'] == '6'){ echo "checked"; } ?>>Sea
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="themecolor" id="optionsRadiosInline2" value="7" <?php if($result['themecolor'] == '7'){ echo "checked"; } ?>>Violet
                                 </label>
                             </div>
                         </div>
@@ -109,16 +106,9 @@
                             <div class="form-group col-md-4 typography">
                                 <label for="inputState">Theme Font: </label>
                                 <select class="form-control" name="themefont">
-                                    <option value="1" <?php if($result['themefont'] == '1'){ echo "selected"; } ?>>Open Sans</option>
-                                    <option value="2" <?php if($result['themefont'] == '2'){ echo "selected"; } ?>>Poppins </option>
-                                    <option  value="3" <?php if($result['themefont'] == '3'){ echo "selected"; } ?>>Alegreya </option>
-                                    <option value="4" <?php if($result['themefont'] == '4'){ echo "selected"; } ?>>Montserrat </option>
-                                    <option value="5" <?php if($result['themefont'] == '5'){ echo "selected"; } ?>>Merriweather</option>
-                                    <option value="6" <?php if($result['themefont'] == '6'){ echo "selected"; } ?>>Raleway </option>
-                                    <option value="7" <?php if($result['themefont'] == '7'){ echo "selected"; } ?>>Roboto Slab</option>
-                                    <option value="8" <?php if($result['themefont'] == '8'){ echo "selected"; } ?>>Lato</option>
-                                    <option value="9" <?php if($result['themefont'] == '9'){ echo "selected"; } ?>>PT Sans</option>
-                                    <option value="10" <?php if($result['themefont'] == '10'){ echo "selected"; } ?>>Josefin Sans</option>
+                                    <option value="0" <?php if($result['themefont'] == '0'){ echo "selected"; } ?>>Default </option>
+                                    <option value="1" <?php if($result['themefont'] == '1'){ echo "selected"; } ?>>Open Sans </option>
+                                    <option value="2" <?php if($result['themefont'] == '2'){ echo "selected"; } ?>>Raleway </option>
                                 </select>
                             </div>
                         </div>

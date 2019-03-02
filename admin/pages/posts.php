@@ -42,7 +42,7 @@ if(isset($_GET['delete'])){
                         </thead>
                         <tbody>
                         <?php
-                            $query = "SELECT list_posts.id, title, description, image, list_posts.created_at, list_posts.category, list_posts.slug, name, firstname, lastname, username  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author ORDER BY list_posts.id DESC";
+                            $query = "SELECT list_posts.id, title, description, image, list_posts.created_at, list_posts.category, list_posts.slug, author, name, firstname, lastname, username  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author ORDER BY list_posts.id DESC";
                             $posts = $database->select($query);
                             if($posts){
                             $i = 0;
@@ -55,7 +55,13 @@ if(isset($_GET['delete'])){
                                     <td  class="text-capitalize"><?php echo $result['name']; ?></td>
                                     <td  class="center"><?php echo $result['firstname'] . ' ' . $result['lastname']; ?></td>
                                     <td><?php echo $format->formatDate($result['created_at']); ?></td>
-                                    <td  class="center"><a href="<?php echo SITE_URL; ?>./<?php echo $result['slug']; ?>" target="_blank"> <i class="fa fa-eye fa-fw"></i> </a> <a href="editpost.php?edit=<?php echo $result['id']; ?>"><i class="fa fa-edit  fa-fw"></i></a>  <a onclick="return confirm('Are you sure?')" href="?delete=<?php echo $result['id']; ?>"><i class="fa fa-trash  fa-fw"></i></a>  </td>
+                                    <td  class="center">
+                                        <a href="<?php echo SITE_URL; ?>./<?php echo $result['slug']; ?>" target="_blank"> <i class="fa fa-eye fa-fw"></i> </a>
+
+                                <?php if(Session::get('userId') == $result['author'] || Session::get('userRole') == '1'){ ?>
+                                        <a href="editpost.php?edit=<?php echo $result['id']; ?>"><i class="fa fa-edit  fa-fw"></i></a>  <a onclick="return confirm('Are you sure?')" href="?delete=<?php echo $result['id']; ?>"><i class="fa fa-trash  fa-fw"></i></a>
+                                    <?php } ?>
+                                    </td>
                                 </tr>
                         <?php
                                 }

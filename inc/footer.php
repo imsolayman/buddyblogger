@@ -73,95 +73,122 @@
     <div class="st--footer--top st--sp--65 st--dark--bg--2">
         <div class="container">
             <div class="row">
+                <?php
+                $query = "SELECT * FROM list_widget WHERE id = '1'";
+                $data = $database->select($query);
+                if($data){
+                while($widget = $data->fetch_assoc()){
+                ?>
                 <div class="col-md-4 col-sm-6">
-                    <div class="widget st--footer--widget">
-                        <a href="<?php echo SITE_URL; ?>" class="footer--logo">
-                            <?php
-                            $query = "SELECT * FROM list_customize WHERE id = '1'  ";
-                            $data = $database->select($query);
-                            if($data){
-                                while($result = $data->fetch_assoc()){
-                                    ?>
-                                    <img src="admin/<?php echo $result['logo']; ?>" alt="">
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </a>
-                        <p>Stylish is a blog and magazine theme for all compnay who are looking for blog magazine template.we try to create a with more stylish also great UI .</p>
-                        <div class="st--footer--social">
-                            <?php
-                            $query = "SELECT * FROM list_social";
-                            $data = $database->select($query);
-                            if($data){
-                                while($result = $data->fetch_assoc()){
-                                    ?>
-                                        <a href="<?php echo $result['facebook']; ?>" class="zmdi zmdi-facebook"></a>
-                                        <a href="<?php echo $result['twitter']; ?>" class="zmdi zmdi-twitter"></a>
-                                        <a href="<?php echo $result['instagram']; ?>" class="zmdi zmdi-instagram"></a>
-                                        <a href="<?php echo $result['skype']; ?>" class="zmdi zmdi-skype"></a>
-                                        <a href="<?php echo $result['linkedin']; ?>" class="zmdi zmdi-linkedin"></a>
-                                        <a href="<?php echo $result['youtube']; ?>" class="zmdi zmdi-youtube"></a>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
+                    <?php
+                    if(!empty($widget['footer1'])){
+                        $name = $widget['footer1'];
+//                $name =  $widget["{$sidebar1}"];
+                        if($name == 'category'){
+                            include 'helper/widget/category.php';
+                        }elseif($name == 'contactinfo'){
+                            include 'helper/widget/contactinfo.php';
+                        }elseif($name == 'headermenu'){
+                            include 'helper/widget/headermenu.php';
+                        }elseif($name == 'newsletter'){
+                            include 'helper/widget/newsletter.php';
+                        }elseif($name == 'recentpost'){
+                            include 'helper/widget/recentpost.php';
+                        }elseif($name == 'searchbox'){
+                            include 'helper/widget/searchbox.php';
+                        }elseif($name == 'socialicon'){
+                            include 'helper/widget/socialicon.php';
+                        }elseif($name == 'tags'){
+                            include 'helper/widget/tags.php';
+                        }elseif($name == 'adsbox'){
+                            include 'helper/widget/adsbox.php';
+                        }elseif($name == 'socialbox'){
+                            include 'helper/widget/socialbox.php';
+                        }elseif($name == 'trendingposts'){
+                            include 'helper/widget/trendingposts.php';
+                        }elseif($name == 'twitterfeed'){
+                            include 'helper/widget/twitterfeed.php';
+                        }
+                    }else{
+                        echo "";
+                    }
+                    ?>
+
                 </div>
                 <div class="col-md-4 col-sm-6">
-                    <div class="widget st--footer--widget">
-                        <div class="st--widget--title--2">
-                            <h4>Recent Post</h4>
-                        </div>
-                        <div class="st--recent--postbox--1">
-                            <?php
-                            $query = "SELECT * FROM list_posts ORDER BY id DESC LIMIT 3";
-                            $post = $database->select($query);
-                            if($post){
-                            while($result = $post->fetch_assoc()){
-                            ?>
-                            <div class="st--single">
-                                <div class="pull-left">
-                                    <div class="st--recent--img" style="background-image: url(admin/<?php echo $result['image']; ?>)"></div>
-                                </div>
-                                <div class="st--recent--content">
-                                    <h5><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h5>
-                                    <a href="#" class="st--date"><?php echo $format->formatDate($result['created_at']); ?></a>
-                                </div>
-                            </div>
-                                <?php
-                            }
-                            }
-                            ?>
-                        </div>
-                    </div>
+                    <?php
+                    if(!empty($widget['footer2'])){
+                        $name = $widget['footer2'];
+//                $name =  $widget["{$sidebar1}"];
+                        if($name == 'category'){
+                            include 'helper/widget/category.php';
+                        }elseif($name == 'contactinfo'){
+                            include 'helper/widget/contactinfo.php';
+                        }elseif($name == 'headermenu'){
+                            include 'helper/widget/headermenu.php';
+                        }elseif($name == 'newsletter'){
+                            include 'helper/widget/newsletter.php';
+                        }elseif($name == 'recentpost'){
+                            include 'helper/widget/recentpost.php';
+                        }elseif($name == 'searchbox'){
+                            include 'helper/widget/searchbox.php';
+                        }elseif($name == 'socialicon'){
+                            include 'helper/widget/socialicon.php';
+                        }elseif($name == 'tags'){
+                            include 'helper/widget/tags.php';
+                        }elseif($name == 'adsbox'){
+                            include 'helper/widget/adsbox.php';
+                        }elseif($name == 'socialbox'){
+                            include 'helper/widget/socialbox.php';
+                        }elseif($name == 'trendingposts'){
+                            include 'helper/widget/trendingposts.php';
+                        }elseif($name == 'twitterfeed'){
+                            include 'helper/widget/twitterfeed.php';
+                        }
+                    }else{
+                        echo "";
+                    }
+                    ?>
+
+
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <div class="widget st--footer--widget">
-                        <div class="st--widget--title--2">
-                            <h4>Recent Post</h4>
-                        </div>
-                        <div class="st--footer--inner st--tag--group--1">
-                            <?php
-                            $query = "SELECT tags FROM list_posts ORDER BY id DESC LIMIT 10";
-                            $tags = $database->select($query);
-                            if($tags){
-                            while($result = $tags->fetch_assoc()){
-                            $tagname = explode(',', $result['tags']);
-                            foreach ($tagname as $value){
-                            ?>
-                            <a href="#" class="st--button--3 sm"><?php
-                                echo $value;
-                                ?></a>
-                                <?php
-                            }
-                            }
-                            }
-                            ?>
-                        </div>
-                    </div>
+                    <?php
+                    if(!empty($widget['footer3'])){
+                        $name = $widget['footer3'];
+//                $name =  $widget["{$sidebar1}"];
+                        if($name == 'category'){
+                            include 'helper/widget/category.php';
+                        }elseif($name == 'contactinfo'){
+                            include 'helper/widget/contactinfo.php';
+                        }elseif($name == 'headermenu'){
+                            include 'helper/widget/headermenu.php';
+                        }elseif($name == 'newsletter'){
+                            include 'helper/widget/newsletter.php';
+                        }elseif($name == 'recentpost'){
+                            include 'helper/widget/recentpost.php';
+                        }elseif($name == 'searchbox'){
+                            include 'helper/widget/searchbox.php';
+                        }elseif($name == 'socialicon'){
+                            include 'helper/widget/socialicon.php';
+                        }elseif($name == 'tags'){
+                            include 'helper/widget/tags.php';
+                        }elseif($name == 'adsbox'){
+                            include 'helper/widget/adsbox.php';
+                        }elseif($name == 'socialbox'){
+                            include 'helper/widget/socialbox.php';
+                        }elseif($name == 'trendingposts'){
+                            include 'helper/widget/trendingposts.php';
+                        }elseif($name == 'twitterfeed'){
+                            include 'helper/widget/twitterfeed.php';
+                        }
+                    }else{
+                        echo "";
+                    }
+                    ?>
+
                 </div>
+             <?php }} ?>
             </div>
         </div>
     </div>
@@ -183,8 +210,8 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="st--footer--link">
-                        <a href="<?php echo SITE_URL; ?>privacy-policy">Privacy Policy</a>
-                        <a href="<?php echo SITE_URL; ?>terms-and-conditions">Terms & Conditions</a>
+                        <a href="<?php echo SITE_URL; ?>page/privacy-policy">Privacy Policy</a>
+                        <a href="<?php echo SITE_URL; ?>page/terms-and-conditions">Terms & Conditions</a>
                     </div>
                 </div>
             </div>
@@ -214,5 +241,4 @@
 </body>
 
 
-<!-- Mirrored from static.crazycafe.net/crazycafe/stylish/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 27 Jan 2019 10:42:21 GMT -->
 </html>

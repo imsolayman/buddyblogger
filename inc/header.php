@@ -8,13 +8,12 @@ $format = new Format();
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from static.crazycafe.net/crazycafe/stylish/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 27 Jan 2019 10:41:49 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?php echo SITE_URL; ?>" />
+
     <!--    meta contents-->
     <?php include 'helper/metadata.php'; ?>
 
@@ -49,6 +48,9 @@ $format = new Format();
     <!-- custom -->
     <link rel="stylesheet" href="assets/css/custom.css">
 
+    <!--    meta contents-->
+    <?php include 'helper/theme.php'; ?>
+
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700%7CNoto+Sans:400,700" rel="stylesheet">
 
@@ -80,53 +82,85 @@ $format = new Format();
         <div class="header--top">
             <div class="container">
                 <div class="row">
+                    <?php
+                    $query = "SELECT * FROM list_widget WHERE id = '1'";
+                    $data = $database->select($query);
+                    if($data){
+                    while($widget = $data->fetch_assoc()){
+                    ?>
                     <div class="col-sm-6">
-                        <ul class="header--left">
-                            <?php
-                            $query = "SELECT * FROM list_footermenu ORDER BY id ASC";
-                            $data = $database->select($query);
-                            if($data){
-                                while($result = $data->fetch_assoc()){
-                                    ?>
-                                    <li> <a href="<?php echo $result['link']; ?>"><?php echo $result['title']; ?></a></li>
-                                    <?php
-                                }
+                        <?php
+                        if(!empty($widget['header1'])){
+                            $name = $widget['header1'];
+//                $name =  $widget["{$sidebar1}"];
+                            if($name == 'category'){
+                                include 'helper/widget/category.php';
+                            }elseif($name == 'contactinfo'){
+                                include 'helper/widget/contactinfo.php';
+                            }elseif($name == 'headermenu'){
+                                include 'helper/widget/headermenu.php';
+                            }elseif($name == 'newsletter'){
+                                include 'helper/widget/newsletter.php';
+                            }elseif($name == 'recentpost'){
+                                include 'helper/widget/recentpost.php';
+                            }elseif($name == 'searchbox'){
+                                include 'helper/widget/searchbox.php';
+                            }elseif($name == 'socialicon'){
+                                include 'helper/widget/socialicon.php';
+                            }elseif($name == 'tags'){
+                                include 'helper/widget/tags.php';
+                            }elseif($name == 'adsbox'){
+                                include 'helper/widget/adsbox.php';
+                            }elseif($name == 'socialbox'){
+                                include 'helper/widget/socialbox.php';
+                            }elseif($name == 'trendingposts'){
+                                include 'helper/widget/trendingposts.php';
+                            }elseif($name == 'twitterfeed'){
+                                include 'helper/widget/twitterfeed.php';
                             }
-                            ?>
-                        </ul>
+                        }else{
+                            echo "";
+                        }
+                        ?>
                     </div>
                     <div class="col-sm-6">
                         <ul class="header--right">
                             <?php
-                            $query = "SELECT * FROM list_social";
-                            $data = $database->select($query);
-                            if($data){
-                                while($result = $data->fetch_assoc()){
-                                    ?>
-                            <li>
-                                <a href="<?php echo $result['facebook']; ?>" class="zmdi zmdi-facebook"></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $result['twitter']; ?>" class="zmdi zmdi-twitter"></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $result['instagram']; ?>" class="zmdi zmdi-instagram"></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $result['skype']; ?>" class="zmdi zmdi-skype"></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $result['linkedin']; ?>" class="zmdi zmdi-linkedin"></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo $result['youtube']; ?>" class="zmdi zmdi-youtube"></a>
-                            </li>
-                                    <?php
+                            if(!empty($widget['header2'])){
+                                $name = $widget['header2'];
+//                $name =  $widget["{$sidebar1}"];
+                                if($name == 'category'){
+                                    include 'helper/widget/category.php';
+                                }elseif($name == 'contactinfo'){
+                                    include 'helper/widget/contactinfo.php';
+                                }elseif($name == 'headermenu'){
+                                    include 'helper/widget/headermenu.php';
+                                }elseif($name == 'newsletter'){
+                                    include 'helper/widget/newsletter.php';
+                                }elseif($name == 'recentpost'){
+                                    include 'helper/widget/recentpost.php';
+                                }elseif($name == 'searchbox'){
+                                    include 'helper/widget/searchbox.php';
+                                }elseif($name == 'socialicon'){
+                                    include 'helper/widget/socialicon.php';
+                                }elseif($name == 'tags'){
+                                    include 'helper/widget/tags.php';
+                                }elseif($name == 'adsbox'){
+                                    include 'helper/widget/adsbox.php';
+                                }elseif($name == 'socialbox'){
+                                    include 'helper/widget/socialbox.php';
+                                }elseif($name == 'trendingposts'){
+                                    include 'helper/widget/trendingposts.php';
+                                }elseif($name == 'twitterfeed'){
+                                    include 'helper/widget/twitterfeed.php';
                                 }
+                            }else{
+                                echo "";
                             }
                             ?>
                         </ul>
                     </div>
+                    <?php }} ?>
                 </div>
             </div>
         </div>
@@ -138,13 +172,21 @@ $format = new Format();
                         $query = "SELECT * FROM list_customize WHERE id = '1'  ";
                         $data = $database->select($query);
                         if($data){
-                        while($result = $data->fetch_assoc()){
-                        ?>
-                        <a href="<?php echo SITE_URL; ?>" class="logo"><img src="admin/<?php echo $result['logo']; ?>" alt=""></a>
+                            while($fetchedData = $data->fetch_assoc()){
+                                ?>
                             <?php
-                        }
-                        }
-                        ?>
+                            $query = "SELECT * FROM list_theme WHERE id = '1'";
+                            $themes = $database->select($query);
+                            while($result = $themes->fetch_assoc()){
+                            if($result['logo'] == '1'){?>
+                                <a href="<?php echo SITE_URL; ?>" class="logo"><img src="admin/<?php echo $fetchedData['logo']; ?>" alt=""></a>
+
+                                <?php }elseif($result['logo'] == '2'){ ?>
+                                <a href="<?php echo SITE_URL; ?>" class="logo"><?php echo $fetchedData['title']; ?></a>
+                                <?php }elseif($result['logo'] == '3'){ ?>
+                                <a href="<?php echo SITE_URL; ?>" class="logo"><img src="admin/<?php echo $fetchedData['logo']; ?>" alt=""></a>
+                            <?php } } ?>
+                        <?php } } ?>
                     </div>
                     <div class="col-md-8 ads--column--1">
                         <a href="#" class="header--ads">

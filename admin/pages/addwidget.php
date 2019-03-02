@@ -28,43 +28,63 @@ if(isset($_GET['name'])){
                     <h2>Available Items</h2>
                     <div class="col-lg-6">
                         <div class="single-modals">
-                            <a href="addwidget.php?name=contactinfo"  class="btn btn-default">
+                            <a href="addwidget.php?name=contactinfo"  class="btn btn-default addwidget">
                                 Contact Info
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=searchbox"  class="btn btn-default">
+                            <a href="addwidget.php?name=searchbox"  class="btn btn-default addwidget">
                                 Search Box
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=newsletter"  class="btn btn-default">
+                            <a href="addwidget.php?name=newsletter"  class="btn btn-default addwidget">
                                 Newsletter
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=tags"  class="btn btn-default">
+                            <a href="addwidget.php?name=tags"  class="btn btn-default addwidget">
                                 Tags
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=category"  class="btn btn-default">
+                            <a href="addwidget.php?name=category"  class="btn btn-default addwidget">
                                 Category
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=footermenu"  class="btn btn-default">
-                                Footer Menu
+                            <a href="addwidget.php?name=headermenu"  class="btn btn-default addwidget">
+                                Header Menu
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=socialicon"  class="btn btn-default">
+                            <a href="addwidget.php?name=socialicon"  class="btn btn-default addwidget">
                                 Social Icons
                             </a>
                         </div>
                         <div class="single-modals">
-                            <a href="addwidget.php?name=recentpost"  class="btn btn-default">
+                            <a href="addwidget.php?name=recentpost"  class="btn btn-default addwidget">
                                 Recent Posts
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=trendingposts"  class="btn btn-default addwidget">
+                                Trending Posts
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=adsbox"  class="btn btn-default addwidget">
+                                Ads Box
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=socialbox"  class="btn btn-default addwidget">
+                                Social Box
+                            </a>
+                        </div>
+                        <div class="single-modals">
+                            <a href="addwidget.php?name=twitterfeed"  class="btn btn-default addwidget">
+                                Twitter Feed
                             </a>
                         </div>
                     </div>
@@ -113,6 +133,21 @@ if(isset($_GET['name'])){
                                         </div>
                                         <div class="radio">
                                             <label>
+                                                <input name="optionsRadios" id="optionsRadios3" value="sidebar5" type="radio">Sidebar 5
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="optionsRadios" id="optionsRadios3" value="sidebar6" type="radio">Sidebar 6
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="optionsRadios" id="optionsRadios3" value="sidebar7" type="radio">Sidebar 7
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
                                                 <input name="optionsRadios" id="optionsRadios1" value="footer1" type="radio">Footer 1
                                             </label>
                                         </div>
@@ -124,6 +159,16 @@ if(isset($_GET['name'])){
                                         <div class="radio">
                                             <label>
                                                 <input name="optionsRadios" id="optionsRadios3" value="footer3" type="radio">Footer 3
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="optionsRadios" id="optionsRadios3" value="header1" type="radio">Header 1
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="optionsRadios" id="optionsRadios3" value="header2" type="radio">Header 2
                                             </label>
                                         </div>
                                     </div>
@@ -230,6 +275,51 @@ if(isset($_GET['name'])){
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar5">Sidebar 5</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar5" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar5'] != ""){echo ucfirst($result['sidebar5'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar6">Sidebar 6</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar6" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar6'] != ""){echo ucfirst($result['sidebar6'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar7">Sidebar 7</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar7" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar7'] != ""){echo ucfirst($result['sidebar7'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -280,6 +370,43 @@ if(isset($_GET['name'])){
                                             <div class="panel-body">
                                                 <div class="single-modals"><a class="btn btn-default">
                                                         <?php if($result['footer3'] != ""){echo ucfirst($result['footer3'])."<a href='?delete=footer3'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    Header Widgets
+                                </div>
+                                <div class="panel-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Header1">Header 1</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Header1" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['header1'] != ""){echo ucfirst($result['header1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Header2">Header 2</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Header2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['header2'] != ""){echo ucfirst($result['header2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                                     </a></div>
 
                                             </div>

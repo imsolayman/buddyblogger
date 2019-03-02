@@ -92,8 +92,7 @@ if($post) {
                                         <div class="st--post--img">
                                             <img src="admin/<?php echo $result['image']; ?>" alt="">
                                         </div>
-                                        <a href="#" class="st--tags st--sticky--cat--1">Recipes</a>
-                                        <a href="https://vimeo.com/179298651" class="st--vdo--btn st--pop-video"><i class="zmdi zmdi-play"></i></a>
+                                        <a href="#" class="st--tags st--sticky--cat--1"><?php echo $result['name']; ?></a>
                                     </div>
                                     <div class="st--post--content">
                                         <h4><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h4>
@@ -124,9 +123,9 @@ if($post) {
                                 $totalPages = ceil($totalPosts / $postPerPage);
                                 //                        echo "<li><a href='blog.php?pageid=1'>1</a></li>";
                                 for($i = 1; $i <= $totalPages; $i++){
-                                    echo "<li><a href='blog.php?pageid=$i'>$i</a></li>";
+                                    echo "<li><a href='?pageid=$i'>$i</a></li>";
                                 }
-                                echo "<li><a href='blog.php?pageid=$totalPages'> <i class='zmdi zmdi-long-arrow-right'></i></a></li>";
+                                echo "<li><a href='?pageid=$totalPages'> <i class='zmdi zmdi-long-arrow-right'></i></a></li>";
                                 ?>
                             </ul>
                         </div>

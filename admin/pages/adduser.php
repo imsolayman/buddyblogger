@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Avatar</label>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Avatar*</label>
                                 <div class="col-sm-3">
                                     <input type="file" name="image">
                                 </div>
