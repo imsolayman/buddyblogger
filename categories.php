@@ -14,11 +14,7 @@ if(!isset($_GET['category']) || $_GET['category'] == null){
                 <div class="col-md-12 text-center">
                     <h4>
                         <?php
-                        $tiltequery = "SELECT *  FROM list_category WHERE slug = '$category' ";
-                        $gettitle = $database->select($tiltequery);
-                        $titleresult = $gettitle->fetch_assoc();
-                        $title = $titleresult['name'];
-                        echo $title.' Blog';
+                        echo ucwords($category).' Blog';
                         ?>
                     </h4>
                 </div>
@@ -60,7 +56,7 @@ if(!isset($_GET['category']) || $_GET['category'] == null){
                                         <div class="st--post--img">
                                             <img src="admin/<?php echo $result['image']; ?>" alt="">
                                         </div>
-                                        <a href="./category/<?php echo $format->slug($result['name']); ?>" class="st--tags st--sticky--cat--1"><?php echo $getresult['name']; ?></a>
+                                        <a href="./category/<?php echo $format->slug($getresult['name']); ?>" class="st--tags st--sticky--cat--1"><?php echo $getresult['name']; ?></a>
                                     </div>
                                 </div>
                                 <div class="st--post--content col-sm-6 post--height--2 flex_center">

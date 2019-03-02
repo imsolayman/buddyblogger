@@ -48,6 +48,9 @@ RewriteRule ^([^/.]+)/?$ /post.php?id=$1
 RewriteRule ^category/([^/.]+)/?$ /categories.php?category=$1
 #RewriteRule ^([^/.]+)/?$ /category.php?category=$1
 
+#For showing without authors.php
+RewriteRule ^author/([^/.]+)/?$ /authors.php?author=$1
+
 
 #this is for xml sitemap
 RewriteRule ^sitemap\.xml/?$ sitemap.php

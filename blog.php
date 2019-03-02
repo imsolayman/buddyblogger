@@ -30,7 +30,7 @@
                     $startFrom = ($id - 1) * $postPerPage;
                     ?>
                     <?php
-                    $query = "SELECT list_posts.id, title, description, image, list_posts.created_at, list_posts.slug, list_posts.category, name, firstname, lastname  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author ORDER BY list_posts.id DESC limit $startFrom, $postPerPage";
+                    $query = "SELECT list_posts.id, title, description, image, list_posts.created_at, list_posts.slug, list_posts.category, name, username, firstname, lastname  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author ORDER BY list_posts.id DESC limit $startFrom, $postPerPage";
                     $post = $database->select($query);
                     if($post){
                     while ($result = $post->fetch_assoc()) {
@@ -50,7 +50,7 @@
                                     <h4><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h4>
                                     <div class="st--post--meta st--info">
                                 <span class="posted-by">
-                            Posted by <a href="#" class="st--author"><?php echo $result['firstname'] . ' ' . $result['lastname']; ?></a>
+                            Posted by <a href="./author/<?php echo $result['username']; ?>" class="st--author"><?php echo $result['firstname'] . ' ' . $result['lastname']; ?></a>
                         </span>
                                     <span class="post-date">
                                     <a href="#"><?php echo $format->formatYear($result['created_at']); ?></a>

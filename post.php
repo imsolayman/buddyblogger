@@ -21,7 +21,7 @@ if(!isset($_GET['id']) || $_GET['id'] == null){
                 <div class="row">
                     <div class="col-md-7 about--col">
                         <?php
-                        $query = "SELECT list_posts.id, title, description, image, tags, list_posts.created_at, list_posts.category, name, firstname, lastname, list_user.photo  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author AND list_posts.slug = '$id' ";
+                        $query = "SELECT list_posts.id, title, description, image, tags, list_posts.created_at, list_posts.category, name, username, firstname, lastname, list_user.photo  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author AND list_posts.slug = '$id' ";
                         $post = $database->select($query);
                         if($post){
                             while ($result = $post->fetch_assoc()) {
@@ -40,7 +40,7 @@ if(!isset($_GET['id']) || $_GET['id'] == null){
                                     <div class="author--img pull-left">
                                         <img src="admin/<?php echo $result['photo']; ?>" alt="">
                                     </div>
-                                    <a href="#" class="st--author"><?php echo $result['firstname'].' '.$result['lastname']; ?></a>
+                                    <a href="./author/<?php echo $result['username']; ?>" class="st--author"><?php echo $result['firstname'].' '.$result['lastname']; ?></a>
                                 </div>
                                 <a href="#" class="st--post--date"><?php echo $format->formatDate($result['created_at']); ?></a>
                             </div>
@@ -69,7 +69,7 @@ if(!isset($_GET['id']) || $_GET['id'] == null){
                                 </div>
                             </div>
                             <?php
-                            $query = "SELECT list_posts.id, title, description, image, list_posts.created_at, list_posts.slug, list_posts.category, name, firstname, lastname, list_user.photo  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author ORDER BY list_posts.id DESC LIMIT 2";
+                            $query = "SELECT list_posts.id, title, description, image, list_posts.created_at, list_posts.slug, list_posts.category, name, username, firstname, lastname, list_user.photo  FROM list_posts, list_category, list_user WHERE list_category.id = list_posts.category AND list_user.id = list_posts.author ORDER BY list_posts.id DESC LIMIT 2";
                             $post = $database->select($query);
                             if($post) {
                             while ($result = $post->fetch_assoc()) {
@@ -86,7 +86,7 @@ if(!isset($_GET['id']) || $_GET['id'] == null){
                                         <h4><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h4>
                                         <div class="st--post--meta st--info">
                                             <span class="posted-by">
-                                        Posted by <a href="#" class="st--author"><?php echo $result['firstname'] . ' ' . $result['lastname']; ?></a>
+                                        Posted by <a href="./author/<?php echo $result['username']; ?>" class="st--author"><?php echo $result['firstname'] . ' ' . $result['lastname']; ?></a>
                                     </span>
                                             <span class="post-date">
                                         <a href="#"><?php echo $format->formatYear($result['created_at']); ?></a>
