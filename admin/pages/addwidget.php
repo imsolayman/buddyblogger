@@ -284,7 +284,7 @@ if(isset($_GET['name'])){
                                         <div id="Sidebar5" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <div class="single-modals"><a class="btn btn-default">
-                                                        <?php if($result['sidebar5'] != ""){echo ucfirst($result['sidebar5'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                        <?php if($result['sidebar5'] != ""){echo ucfirst($result['sidebar5'])."<a href='?delete=sidebar5'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                                     </a></div>
 
                                             </div>
@@ -299,7 +299,7 @@ if(isset($_GET['name'])){
                                         <div id="Sidebar6" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <div class="single-modals"><a class="btn btn-default">
-                                                        <?php if($result['sidebar6'] != ""){echo ucfirst($result['sidebar6'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                        <?php if($result['sidebar6'] != ""){echo ucfirst($result['sidebar6'])."<a href='?delete=sidebar6'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                                     </a></div>
 
                                             </div>
@@ -314,7 +314,7 @@ if(isset($_GET['name'])){
                                         <div id="Sidebar7" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <div class="single-modals"><a class="btn btn-default">
-                                                        <?php if($result['sidebar7'] != ""){echo ucfirst($result['sidebar7'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                        <?php if($result['sidebar7'] != ""){echo ucfirst($result['sidebar7'])."<a href='?delete=sidebar7'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                                     </a></div>
 
                                             </div>
@@ -391,7 +391,7 @@ if(isset($_GET['name'])){
                                         <div id="Header1" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <div class="single-modals"><a class="btn btn-default">
-                                                        <?php if($result['header1'] != ""){echo ucfirst($result['header1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                        <?php if($result['header1'] != ""){echo ucfirst($result['header1'])."<a href='?delete=header1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                                     </a></div>
 
                                             </div>
@@ -406,7 +406,7 @@ if(isset($_GET['name'])){
                                         <div id="Header2" class="panel-collapse collapse">
                                             <div class="panel-body">
                                                 <div class="single-modals"><a class="btn btn-default">
-                                                        <?php if($result['header2'] != ""){echo ucfirst($result['header2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                        <?php if($result['header2'] != ""){echo ucfirst($result['header2'])."<a href='?delete=header2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
                                                     </a></div>
 
                                             </div>

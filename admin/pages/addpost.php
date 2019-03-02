@@ -23,6 +23,7 @@
                             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 if($data['checkcontent'] == '2' || $data['checkcontent'] == '1,2' || $data['checkcontent'] == '2,3' || $data['checkcontent'] == '1,2,3') {
                                     $title = mysqli_real_escape_string($database->link, $_POST['title']);
+                                    $slug = mysqli_real_escape_string($database->link, $_POST['slug']);
                                     $description = mysqli_real_escape_string($database->link, $_POST['description']);
                                     $category = mysqli_real_escape_string($database->link, $_POST['category']);
                                     $tags = mysqli_real_escape_string($database->link, $_POST['tags']);
@@ -30,7 +31,7 @@
                                     $metadescription = mysqli_real_escape_string($database->link, $_POST['metadescription']);
                                     $metakeywords = mysqli_real_escape_string($database->link, $_POST['metakeywords']);
                                     $author = mysqli_real_escape_string($database->link, Session::get('userId'));
-                                    $slug = $format->slug($title);
+//                                    $slug = $format->slug($title);
 
                                     $permited  = array('jpg', 'jpeg', 'png', 'gif');
                                     $file_name = $_FILES['image']['name'];
@@ -96,7 +97,10 @@
                         <form role="form" action="" method="post" enctype="multipart/form-data">
                             <div class="col-lg-9">
                                 <div class="form-group">
-                                    <input class="form-control" name="title" placeholder="Enter title here ">
+                                    <input type="text" class="form-control" name="title" id="slug-source" placeholder="Enter title here ">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="slug-target-span" name="slug" placeholder="URL">
                                 </div>
                                 <div class="form-group">
                                     <label>Write Post</label>
@@ -186,5 +190,8 @@
         placeholder: 'Write post here',
         tabsize: 2,
         height: 200
+    });
+    jQuery(function($) {
+        $('#slug-target-span').slugify('#slug-source');
     });
 </script>

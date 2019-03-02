@@ -11,7 +11,7 @@ if($post) {
         <div class="single--slide" style="background-image: url(admin/<?php echo $result['image']; ?>)">
             <div class="st--inner">
                 <div class="st--tags st--info bg-1">
-                    <a href="#"><?php echo $result['name']; ?></a></a>
+                    <a href="./category/<?php echo $format->slug($result['name']); ?>"><?php echo $result['name']; ?></a></a>
                 </div>
 <!--                <h2><a href="post.php?id=--><?php //echo $result['id']; ?><!--">--><?php //echo $result['title']; ?><!--</a></h2>-->
                 <h2><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h2>
@@ -92,7 +92,7 @@ if($post) {
                                         <div class="st--post--img">
                                             <img src="admin/<?php echo $result['image']; ?>" alt="">
                                         </div>
-                                        <a href="#" class="st--tags st--sticky--cat--1"><?php echo $result['name']; ?></a>
+                                        <a href="./category/<?php echo $format->slug($result['name']); ?>" class="st--tags st--sticky--cat--1"><?php echo $result['name']; ?></a>
                                     </div>
                                     <div class="st--post--content">
                                         <h4><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h4>

@@ -1,6 +1,6 @@
 <?php include 'config/config.php'; ?>
-<?php include 'lib/database.php'; ?>
-<?php include 'lib/format.php'; ?>
+<?php include 'lib/Database.php'; ?>
+<?php include 'lib/Format.php'; ?>
 <?php
 $database = new Database();
 $format = new Format();

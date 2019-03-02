@@ -60,7 +60,7 @@ if(!isset($_GET['category']) || $_GET['category'] == null){
                                         <div class="st--post--img">
                                             <img src="admin/<?php echo $result['image']; ?>" alt="">
                                         </div>
-                                        <a href="#" class="st--tags st--sticky--cat--1"><?php echo $getresult['name']; ?></a>
+                                        <a href="./category/<?php echo $format->slug($result['name']); ?>" class="st--tags st--sticky--cat--1"><?php echo $getresult['name']; ?></a>
                                     </div>
                                 </div>
                                 <div class="st--post--content col-sm-6 post--height--2 flex_center">

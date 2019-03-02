@@ -29,6 +29,9 @@
 <script src="../vendor/summernote/popper.min.js"></script>
 <script src="../vendor/summernote/summernote-bs4.min.js"></script>
 
+<!-- slugify JavaScript -->
+<script src="../vendor/slugify.js"></script>
+
 <!-- Custom Theme JavaScript -->
 <script src="../dist/js/sb-admin-2.js"></script>
 

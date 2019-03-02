@@ -13,7 +13,7 @@
                     <div class="st--inner">
                         <img src="admin/<?php echo $result['image']; ?>" alt="">
                         <div class="st--content">
-                            <a href="#" class="st--tags"><?php echo $result['name']; ?></a>
+                            <a href="./category/<?php echo $format->slug($result['name']); ?>" class="st--tags"><?php echo $result['name']; ?></a>
                             <h5><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h5>
                         </div>
                     </div>

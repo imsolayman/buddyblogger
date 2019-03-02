@@ -32,7 +32,7 @@ if(!isset($_GET['id']) || $_GET['id'] == null){
                                 <img src="admin/<?php echo $result['image']; ?>" alt="">
                             </div>
                             <div class="st--tags st--info bg-2">
-                                <a href="#"><?php echo $result['name']; ?></a></a>
+                                <a href="./category/<?php echo $format->slug($result['name']); ?>"><?php echo $result['name']; ?></a></a>
                             </div>
                             <h2><?php echo $result['title']; ?></h2>
                             <div class="st--meta st--info">
@@ -80,7 +80,7 @@ if(!isset($_GET['id']) || $_GET['id'] == null){
                                         <div class="st--post--img">
                                             <img src="admin/<?php echo $result['image']; ?>" alt="">
                                         </div>
-                                        <a href="#" class="st--tags st--sticky--cat--1"><?php echo $result['name']; ?></a>
+                                        <a href="./category/<?php echo $format->slug($result['name']); ?>" class="st--tags st--sticky--cat--1"><?php echo $result['name']; ?></a>
                                     </div>
                                     <div class="st--post--content">
                                         <h4><a href="./<?php echo $result['slug']; ?>"><?php echo $result['title']; ?></a></h4>

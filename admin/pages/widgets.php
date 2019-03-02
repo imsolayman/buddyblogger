@@ -87,7 +87,7 @@ if(Session::get('userRole') != '1'){
                 <?php
                 if(isset($_GET['delete'])){
                     $id = $_GET['delete'];
-                      $query = "UPDATE list_widget
+                    $query = "UPDATE list_widget
                                 SET 
                                 $id = ''
                                 WHERE
@@ -105,220 +105,220 @@ if(Session::get('userRole') != '1'){
                 $widget = $database->select($query);
                 if($widget){
                     while($result = $widget->fetch_assoc()){
-                ?>
+                        ?>
 
-                <div class="col-lg-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            Sidebar Widgets
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default">
+                        <div class="col-lg-4">
+                            <div class="panel panel-success">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar1">Sidebar1</a>
-                                    </h4>
+                                    Sidebar Widgets
                                 </div>
-                                <div id="Sidebar1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals">
-                                            <a class="btn btn-default">
-                                                <?php if($result['sidebar1'] != ""){echo ucfirst($result['sidebar1'])."<a href='?delete=sidebar1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a>
+                                <div class="panel-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar1">Sidebar1</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar1" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals">
+                                                    <a class="btn btn-default">
+                                                        <?php if($result['sidebar1'] != ""){echo ucfirst($result['sidebar1'])."<a href='?delete=sidebar1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar2">Sidebar 2</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals">
+                                                    <a class="btn btn-default">
+                                                        <?php if($result['sidebar2'] != ""){echo ucfirst($result['sidebar2'])."<a href='?delete=sidebar2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar3">Sidebar 3</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar3'] != ""){echo ucfirst($result['sidebar3'])."<a href='?delete=sidebar3'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar4">Sidebar 4</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar4" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar4'] != ""){echo ucfirst($result['sidebar4'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar5">Sidebar 5</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar5" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar5'] != ""){echo ucfirst($result['sidebar5'])."<a href='?delete=sidebar5'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar6">Sidebar 6</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar6" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar6'] != ""){echo ucfirst($result['sidebar6'])."<a href='?delete=sidebar6'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar7">Sidebar 7</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Sidebar7" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['sidebar7'] != ""){echo ucfirst($result['sidebar7'])."<a href='?delete=sidebar7'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="panel panel-success">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar2">Sidebar 2</a>
-                                    </h4>
+                                    Footer Widgets
                                 </div>
-                                <div id="Sidebar2" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals">
-                                            <a class="btn btn-default">
-                                                <?php if($result['sidebar2'] != ""){echo ucfirst($result['sidebar2'])."<a href='?delete=sidebar2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a>
+                                <div class="panel-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Footer1">Footer 1</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Footer1" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['footer1'] != ""){echo ucfirst($result['footer1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Footer2">Footer 2</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Footer2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['footer2'] != ""){echo ucfirst($result['footer2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Footer3">Footer 3</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Footer3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['footer3'] != ""){echo ucfirst($result['footer3'])."<a href='?delete=footer3'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default">
+                            <div class="panel panel-success">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar3">Sidebar 3</a>
-                                    </h4>
+                                    Header Widgets
                                 </div>
-                                <div id="Sidebar3" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar3'] != ""){echo ucfirst($result['sidebar3'])."<a href='?delete=sidebar3'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
+                                <div class="panel-body">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Header1">Header 1</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Header1" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['header1'] != ""){echo ucfirst($result['header1'])."<a href='?delete=header1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
 
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar4">Sidebar 4</a>
-                                    </h4>
-                                </div>
-                                <div id="Sidebar4" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar4'] != ""){echo ucfirst($result['sidebar4'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#Header2">Header 2</a>
+                                            </h4>
+                                        </div>
+                                        <div id="Header2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="single-modals"><a class="btn btn-default">
+                                                        <?php if($result['header2'] != ""){echo ucfirst($result['header2'])."<a href='?delete=header2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
+                                                    </a></div>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar5">Sidebar 5</a>
-                                    </h4>
-                                </div>
-                                <div id="Sidebar5" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar5'] != ""){echo ucfirst($result['sidebar5'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar6">Sidebar 6</a>
-                                    </h4>
-                                </div>
-                                <div id="Sidebar6" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar6'] != ""){echo ucfirst($result['sidebar6'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Sidebar7">Sidebar 7</a>
-                                    </h4>
-                                </div>
-                                <div id="Sidebar7" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['sidebar7'] != ""){echo ucfirst($result['sidebar7'])."<a href='?delete=sidebar4'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            Footer Widgets
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Footer1">Footer 1</a>
-                                    </h4>
-                                </div>
-                                <div id="Footer1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['footer1'] != ""){echo ucfirst($result['footer1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Footer2">Footer 2</a>
-                                    </h4>
-                                </div>
-                                <div id="Footer2" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['footer2'] != ""){echo ucfirst($result['footer2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Footer3">Footer 3</a>
-                                    </h4>
-                                </div>
-                                <div id="Footer3" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['footer3'] != ""){echo ucfirst($result['footer3'])."<a href='?delete=footer3'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            Header Widgets
-                        </div>
-                        <div class="panel-body">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Header1">Header 1</a>
-                                    </h4>
-                                </div>
-                                <div id="Header1" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['header1'] != ""){echo ucfirst($result['header1'])."<a href='?delete=footer1'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#Header2">Header 2</a>
-                                    </h4>
-                                </div>
-                                <div id="Header2" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="single-modals"><a class="btn btn-default">
-                                                <?php if($result['header2'] != ""){echo ucfirst($result['header2'])."<a href='?delete=footer2'>Delete</a>"; }else{ echo "<div class='alert alert-warning alert-dismissable'>No Widget Selected !</div>"; } ?>
-                                            </a></div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <?php
-                        }
+                        <?php
                     }
+                }
                 ?>
                 <!-- /.col-lg-4 -->
 

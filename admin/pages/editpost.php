@@ -31,13 +31,14 @@
                         if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             if($data['checkcontent'] == '2' || $data['checkcontent'] == '1,2' || $data['checkcontent'] == '2,3' || $data['checkcontent'] == '1,2,3') {
                                 $title = mysqli_real_escape_string($database->link, $_POST['title']);
+                                $slug = mysqli_real_escape_string($database->link, $_POST['slug']);
                                 $description = mysqli_real_escape_string($database->link, $_POST['description']);
                                 $category = mysqli_real_escape_string($database->link, $_POST['category']);
                                 $tags = mysqli_real_escape_string($database->link, $_POST['tags']);
                                 $metatitle = mysqli_real_escape_string($database->link, $_POST['metatitle']);
                                 $metadescription = mysqli_real_escape_string($database->link, $_POST['metadescription']);
                                 $metakeywords = mysqli_real_escape_string($database->link, $_POST['metakeywords']);
-                                $slug = $format->slug($title);
+//                                $slug = $format->slug($title);
 
                                 $permited  = array('jpg', 'jpeg', 'png', 'gif');
                                 $file_name = $_FILES['image']['name'];
@@ -169,6 +170,9 @@
                             <div class="col-lg-9">
                                 <div class="form-group">
                                     <input class="form-control" name="title" value="<?php echo $result['title']; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" name="slug" value="<?php echo $result['slug']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label>Write Post</label>
