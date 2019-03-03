@@ -18,7 +18,7 @@ $format = new Format();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ezeblog Admin - Bootstrap Admin Theme</title>
+    <title>Forgot Password - BuddyBlogger</title>
 
     <!--    favicon-->
     <link rel="icon" href="../upload/favicon.ico" sizes="16x16" type="image/ico">
@@ -67,11 +67,13 @@ $format = new Format();
                             if($mailcheck != false){
                                 while($value = $mailcheck->fetch_assoc()){
                                     $userid = $value['id'];
-                                    $username = $value['username'];
+                                    $firstname = $value['firstname'];
+                                    $lastname = $value['lastname'];
                                 }
                                 $text = substr($email, 0, 3);
-                                $rand = rand(10000, 9999);
-                                $newpass = "$text$rand";
+                                $rand = rand(4454, 305);
+                                $rands = rand(1000, 100);
+                                $newpass = "$rand$text$rands";
                                 $password = md5($newpass);
                                 $updatequery = "UPDATE list_user 
                             SET 
@@ -80,14 +82,11 @@ $format = new Format();
                             id = '$userid' ";
                                 $updated_row = $database->update($updatequery);
                                 $to = "$email";
-                                $from = "abdulalimcba@gmail.com";
-                                $headers = "From: $from\n";
-                                $headers .= "MIME-Version: 1.0" . "\r\n";
-                                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                                $subject = "Your password";
-                                $message = "Your username is ".$username." and Password is ".$newpass." Please visit website to login";
+                                $from = "admin@buddyblogger.com";
+                                $subject = "Your Password Recovery";
+                                $message = "Welcome back ".$firstname." ".$lastname.". Your new Password is ".$newpass.".";
 
-                                $sendmail = mail($to,$subject,$message,$headers);
+                                $sendmail = mail($to, $subject, $message, $from);
                                 if($sendmail){
                                     echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Mail Sent Successfully !!</div>";
                                 }else{
