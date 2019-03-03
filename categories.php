@@ -44,7 +44,7 @@ if(!isset($_GET['category']) || $_GET['category'] == null){
                         <?php
                         $getid = $getresult['id'];
                         $getname = $getresult['name'];
-                        $query = "SELECT *  FROM list_posts WHERE category = '$getid' LIMIT 6";
+                        $query = "SELECT *  FROM list_posts WHERE category = '$getid' LIMIT 10";
                         $post = $database->select($query);
                         if ($post) {
                         while ($result = $post->fetch_assoc()) {
@@ -86,13 +86,6 @@ if(!isset($_GET['category']) || $_GET['category'] == null){
                         }
                         ?>
 
-                    </div>
-                    <div class="st--pagination--1">
-                        <ul>
-                            <li><a href="#">1</a></li>
-                            <li><span>2</span></li>
-                            <li><a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-md-4 st--sidebar--column">

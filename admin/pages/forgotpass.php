@@ -80,7 +80,7 @@ $format = new Format();
                             id = '$userid' ";
                                 $updated_row = $database->update($updatequery);
                                 $to = "$email";
-                                $from = "solaymang3@gmail.com";
+                                $from = "abdulalimcba@gmail.com";
                                 $headers = "From: $from\n";
                                 $headers .= "MIME-Version: 1.0" . "\r\n";
                                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";

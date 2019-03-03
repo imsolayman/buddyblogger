@@ -30,7 +30,7 @@ if(!isset($_GET['mailid']) || $_GET['mailid'] == NULL){
                             if($to == "" || $subject == "" || $body == ""){
                                 echo "<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Field must not be empty !</div>";
                             }else{
-                                $sendmail = mail($to, $from, $subject, $body);
+                                $sendmail = mail($to, $subject, $body, $from);
                                 if($sendmail){
                                     echo "<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button>Mail sent successfully !</div>";
                                 }else{
